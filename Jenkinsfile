@@ -1,6 +1,8 @@
 cpipeline {
     agent any 
-    
+    triggers {
+    githubPush()
+    }
     stages{
         stage("Clone Code"){
             steps {
@@ -28,7 +30,7 @@ cpipeline {
             steps {
                 echo "Deploying the container"
                 sh "docker-compose down && docker-compose up -d"
-                echo "hello aaaaa"
+                echo "hello aaaaa bbbbb"
                 
             }
         }
